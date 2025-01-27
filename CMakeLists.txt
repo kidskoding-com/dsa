@@ -5,9 +5,14 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_executable(dsa_kidskoding_com 
-    src/main.cpp
-    src/algorithms/searching.cpp
+file(GLOB TEST_FILES *.cpp)
+file(GLOB SRC_FILES
+        ${PROJECT_SOURCE_DIR}/src/algorithms/*.cpp
+        ${PROJECT_SOURCE_DIR}/src/data_structures/*.cpp
 )
 
+add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES})
+
 add_subdirectory(tests)
+
+message(STATUS "SRC_FILES: ${SRC_FILES}")
