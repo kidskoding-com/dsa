@@ -14,5 +14,3 @@ file(GLOB SRC_FILES
 add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES})
 
 add_subdirectory(tests)
-
-message(STATUS "SRC_FILES: ${SRC_FILES}")
