@@ -8,9 +8,8 @@ public:
 	Node<T>* next;
 	
 	Node(T value) : value(value), next(nullptr) { }
-	~Node() {
-		delete next;
-	}
+	Node(T value, Node<T>* next) : value(value), next(next) { }
+	~Node() = default;
 };
 
 #endif //NODE_H

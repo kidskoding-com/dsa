@@ -2,14 +2,21 @@
 #define LINKED_LIST_H
 
 #include <stdexcept>
-#include "data_structures/node.h"
+#include "node.h"
 
 template <typename T>
 class LinkedList {
 	Node<T>* head;
 public:
 	LinkedList() : head(nullptr) { }
-	~LinkedList() { delete head; }
+	
+	~LinkedList() {
+		while(head) {
+			Node<T>* temp = head;
+			head = head->next;
+			delete temp;
+		}
+	}
 
 	void pushFront(T value) {
 		Node<T>* newNode = new Node<T>(value);
