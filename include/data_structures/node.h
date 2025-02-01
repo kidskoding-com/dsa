@@ -3,9 +3,10 @@
 
 template <typename T>
 class Node {
+public:
 	T value;
 	Node<T>* next;
-public:
+	
 	Node(T value) : value(value), next(nullptr) { }
 	~Node() {
 		delete next;
