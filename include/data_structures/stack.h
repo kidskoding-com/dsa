@@ -1,8 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
-#include <stdexcept>
 
-#include "node.h"
+#include <stdexcept>
 
 template <typename T>
 class Stack {
