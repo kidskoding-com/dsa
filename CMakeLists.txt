@@ -10,7 +10,9 @@ file(GLOB SRC_FILES
         ${PROJECT_SOURCE_DIR}/src/algorithms/*.cpp
         ${PROJECT_SOURCE_DIR}/src/data_structures/*.cpp
 )
+file(GLOB )
 
-add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES})
+add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES}
+        include/data_structures/*.h)
 
 add_subdirectory(tests)
