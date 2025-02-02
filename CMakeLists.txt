@@ -11,6 +11,5 @@ file(GLOB SRC_FILES
         ${PROJECT_SOURCE_DIR}/src/data_structures/*.cpp
 )
 
-add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES}
-        include/data_structures/graph.h)
+add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES})
 add_subdirectory(tests)

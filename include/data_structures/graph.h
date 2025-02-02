@@ -3,8 +3,6 @@
 
 #include <map>
 
-#include "node.h"
-
 template <typename T>
 class GraphNode {
 public:
@@ -37,7 +35,7 @@ public:
 	}
 	
 	void removeNode(GraphNode<T>* node) {
-		for (auto& pair : graph) {
+		for(auto& pair : graph) {
 			auto& neighbors = pair.second;
 			neighbors.erase(
 				std::remove_if(neighbors.begin(), neighbors.end(),
