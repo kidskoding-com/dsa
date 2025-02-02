@@ -43,14 +43,14 @@ public:
 			bool compareResult = isMaxHeap ? values[leftChild] > values[largestOrSmallest]
 				: values[leftChild] < values[largestOrSmallest];
 			if(compareResult) {
-				largestOrSmallest = rightChild;
+				largestOrSmallest = leftChild;
 			}
 		}
 		
 		if(rightChild < length) {
 			bool compareResult = isMaxHeap ? values[rightChild] > values[largestOrSmallest]
                 : values[rightChild] < values[largestOrSmallest];
-			if (compareResult) {
+			if(compareResult) {
 				largestOrSmallest = rightChild;
 			}
         }

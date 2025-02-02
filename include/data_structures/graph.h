@@ -2,6 +2,7 @@
 #define GRAPH_H
 
 #include <map>
+#include <vector>
 
 template <typename T>
 class GraphNode {

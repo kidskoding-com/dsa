@@ -149,14 +149,10 @@ void radixSort(std::vector<int>& array) {
 
 void heapSort(Heap<int>& heap) {
     heap.buildHeap();
-    int considered = heap.values.size();
+    int length = heap.values.size();
 
-    while(considered > 1) {
-        std::swap(heap.values[0], heap.values[--considered]);
-        heap.siftDown(0, considered);
-    }
-    
-    if(heap.isMaxHeap) {
-        std::reverse(heap.values.begin(), heap.values.end());
+    for(int i = length - 1; i > 0; --i) {
+        std::swap(heap.values[0], heap.values[i]);
+        heap.siftDown(0, i);
     }
 }

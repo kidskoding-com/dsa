@@ -57,3 +57,27 @@ TEST(SortingTest, RadixSortTest) {
     
     EXPECT_EQ(arr, sorted);
 }
+TEST(SortingTest, MinHeapSortTest) {
+    Heap<int> heap(false);
+    heap.insert(5);
+    heap.insert(10);
+    heap.insert(15);
+    heap.buildHeap();
+    heapSort(heap);
+
+    std::vector<int> sorted({15, 10, 5});
+
+    EXPECT_EQ(heap.values, sorted);
+}
+TEST(SortingTest, MaxHeapSortTest) {
+    Heap<int> heap(true);
+    heap.insert(5);
+    heap.insert(10);
+    heap.insert(15);
+    heap.buildHeap();
+    heapSort(heap);
+
+    std::vector<int> sorted({5, 10, 15});
+
+    EXPECT_EQ(heap.values, sorted);
+}
