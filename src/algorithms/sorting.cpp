@@ -146,3 +146,17 @@ void radixSort(std::vector<int>& array) {
         exp *= 10;
     }
 }
+
+void heapSort(Heap<int>& heap) {
+    heap.buildHeap();
+    int considered = heap.values.size();
+
+    while(considered > 1) {
+        std::swap(heap.values[0], heap.values[--considered]);
+        heap.siftDown(0, considered);
+    }
+    
+    if(heap.isMaxHeap) {
+        std::reverse(heap.values.begin(), heap.values.end());
+    }
+}
