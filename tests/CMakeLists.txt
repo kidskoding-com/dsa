@@ -9,7 +9,8 @@ file(GLOB TEST_FILES *.cpp)
 enable_testing()
 
 add_executable(all_tests ${TEST_FILES} ${SRC_FILES}
-        tree_traversal_test.cpp)
+        tree_traversal_test.cpp
+        graph_traversal_test.cpp)
 
 target_link_libraries(all_tests PRIVATE gtest gtest_main)
 
