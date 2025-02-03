@@ -107,7 +107,9 @@ std::map<GraphNode<T>*, int> bellmanFord(Graph<T>& graph, GraphNode<T>* start) {
 	for(size_t i = 0; i < numVertices - 1; ++i) {
 		for(const auto& [node, neighbors] : graph.graph) {
 			for(const auto& [neighbor, weight] : neighbors) {
-				if(distances[node] + weight < distances[neighbor]) {
+				if(distances[node] != std::numeric_limits<int>::max()
+					&& distances[node] + weight < distances[neighbor]) {
+					
 					distances[neighbor] = distances[node] + weight;
 				}
 			}
@@ -116,7 +118,9 @@ std::map<GraphNode<T>*, int> bellmanFord(Graph<T>& graph, GraphNode<T>* start) {
 
 	for(const auto& [node, neighbors] : graph.graph) {
 		for(const auto& [neighbor, weight] : neighbors) {
-			if(distances[node] + weight < distances[neighbor]) {
+			if(distances[node] != std::numeric_limits<int>::max()
+				&& distances[node] + weight < distances[neighbor]) {
+				
 				throw std::runtime_error("Graph contains a negative weight cycle! "
 							 "Bellman-Ford will not be accurate for this graph!");
 			}
