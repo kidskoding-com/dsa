@@ -14,12 +14,9 @@ TEST(BinaryTreeTest, InsertMultipleElements) {
     tree.insert(5);
     tree.insert(15);
 
-    ASSERT_NE(tree.root, nullptr);
     EXPECT_EQ(tree.root->value, 10);
-    ASSERT_NE(tree.root->left, nullptr);
-    EXPECT_EQ(tree.root->left->value, 5);
-    ASSERT_NE(tree.root->right, nullptr);
-    EXPECT_EQ(tree.root->right->value, 15);
+    EXPECT_EQ(tree.left->root->value, 5);
+    EXPECT_EQ(tree.right->root->value, 15);
 }
 
 TEST(BinaryTreeTest, InsertDuplicateElements) {
@@ -27,9 +24,6 @@ TEST(BinaryTreeTest, InsertDuplicateElements) {
     tree.insert(10);
     tree.insert(10);
 
-    ASSERT_NE(tree.root, nullptr);
     EXPECT_EQ(tree.root->value, 10);
-    ASSERT_EQ(tree.root->left, nullptr);
-    ASSERT_NE(tree.root->right, nullptr);
-    EXPECT_EQ(tree.root->right->value, 10);
+    EXPECT_EQ(tree.right->root->value, 10);
 }

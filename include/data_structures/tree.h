@@ -5,24 +5,21 @@ template <typename T>
 class TreeNode {
 public:
 	T value;
-	TreeNode* left;
-	TreeNode* right;
-
-	TreeNode(T val) : value(val), left(nullptr), right(nullptr) {}
-	~TreeNode() {
-		delete this->left;
-		delete this->right;
-	}
+	TreeNode(T val) : value(val) {}
 };
 
 template <typename T>
 class BinaryTree {
 public:
 	TreeNode<T>* root;
-
-	BinaryTree() : root(nullptr) {}
+	BinaryTree<T>* left;
+	BinaryTree<T>* right;
+	
+	BinaryTree() : root(nullptr), left(nullptr), right(nullptr) {}
 	~BinaryTree() {
 		delete this->root;
+		delete this->left;
+		delete this->right;
 	}
 
 	void insert(const T& value) {
@@ -35,11 +32,19 @@ public:
 private:
 	void insertHelper(TreeNode<T>* node, const T& value) {
 		if(value < node->value) {
-            if(node->left == nullptr) { node->left = new TreeNode<T>(value); }
-			else { insertHelper(node->left, value); }
+            if(left == nullptr) {
+	            left = new BinaryTree<T>();
+            	left->root = new TreeNode<T>(value);
+            } else {
+	            left->insert(value);
+            }
         } else {
-            if(node->right == nullptr) { node->right = new TreeNode<T>(value); }
-        	else { insertHelper(node->right, value); }
+            if(right == nullptr) {
+	            right = new BinaryTree<T>();
+            	right->root = new TreeNode<T>(value);
+            } else {
+	            right->insert(value);
+            }
         }
 	}
 };
