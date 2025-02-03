@@ -95,4 +95,35 @@ std::map<GraphNode<T>*, int> dijkstra(Graph<T>& graph, GraphNode<T>* start) {
 	return distances;
 }
 
+template <typename T>
+std::map<GraphNode<T>*, int> bellmanFord(Graph<T>& graph, GraphNode<T>* start) {
+	std::map<GraphNode<T>*, int> distances;
+	for(const auto& pair : graph.graph) {
+		distances[pair.first] = std::numeric_limits<int>::max();
+	}
+	distances[start] = 0;
+	int numVertices = graph.graph.size();
+
+	for(size_t i = 0; i < numVertices - 1; ++i) {
+		for(const auto& [node, neighbors] : graph.graph) {
+			for(const auto& [neighbor, weight] : neighbors) {
+				if(distances[node] + weight < distances[neighbor]) {
+					distances[neighbor] = distances[node] + weight;
+				}
+			}
+		}
+	}
+
+	for(const auto& [node, neighbors] : graph.graph) {
+		for(const auto& [neighbor, weight] : neighbors) {
+			if(distances[node] + weight < distances[neighbor]) {
+				throw std::runtime_error("Graph contains a negative weight cycle! "
+							 "Bellman-Ford will not be accurate for this graph!");
+			}
+		}
+	}
+
+	return distances;
+}
+
 #endif //GRAPH_TRAVERSAL_H
