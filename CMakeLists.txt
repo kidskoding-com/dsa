@@ -12,5 +12,6 @@ file(GLOB SRC_FILES
 )
 
 add_executable(dsa_kidskoding_com ${SRC_FILES} ${TEST_FILES}
+        include/algorithms/graph_traversal.h
         src/main.cpp)
 add_subdirectory(tests)

@@ -82,7 +82,7 @@ std::map<GraphNode<T>*, int> dijkstra(Graph<T>& graph, GraphNode<T>* start) {
 		if(curr_dist > distances[curr_node]) { continue; }
 
 		for(const auto& [neighbor, weight] : graph.graph[curr_node]) {
-			if(weight) {
+			if(weight != 0) {
 				int new_distance = curr_dist + weight;
 				if(new_distance < distances[neighbor]) {
 					distances[neighbor] = new_distance;
