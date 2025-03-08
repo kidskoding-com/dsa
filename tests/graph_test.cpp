@@ -3,7 +3,7 @@
 
 TEST(GraphTest, AddNode) {
     Graph<int> graph;
-    auto node = new GraphNode<int>(1);
+    auto node = std::make_shared<GraphNode<int>>(1);
     graph.addNode(node);
 
     ASSERT_EQ(graph.graph.size(), 1);
@@ -12,7 +12,7 @@ TEST(GraphTest, AddNode) {
 
 TEST(GraphTest, RemoveNode) {
     Graph<int> graph;
-    auto node = new GraphNode<int>(1);
+    auto node = std::make_shared<GraphNode<int>>(1);
     graph.addNode(node);
     graph.removeNode(node);
 
@@ -21,8 +21,8 @@ TEST(GraphTest, RemoveNode) {
 
 TEST(GraphTest, AddEdge) {
     Graph<int> graph;
-    auto node1 = new GraphNode<int>(1);
-    auto node2 = new GraphNode<int>(2);
+    auto node1 = std::make_shared<GraphNode<int>>(1);
+    auto node2 = std::make_shared<GraphNode<int>>(2);
     graph.addNode(node1);
     graph.addNode(node2);
     graph.addEdge(node1, node2, 10);
@@ -35,8 +35,8 @@ TEST(GraphTest, AddEdge) {
 
 TEST(GraphTest, RemoveEdge) {
     Graph<int> graph;
-    auto node1 = new GraphNode<int>(1);
-    auto node2 = new GraphNode<int>(2);
+    auto node1 = std::make_shared<GraphNode<int>>(1);
+    auto node2 = std::make_shared<GraphNode<int>>(2);
     graph.addNode(node1);
     graph.addNode(node2);
     graph.addEdge(node1, node2, 10);

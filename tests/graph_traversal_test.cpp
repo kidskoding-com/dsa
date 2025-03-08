@@ -1,13 +1,14 @@
 #include <gtest/gtest.h>
+#include <memory>
 #include "data_structures/graph.h"
 #include "algorithms/graph_traversal.h"
 
 TEST(GraphTraversalTest, BreadthFirstSearch) {
-	auto* node1 = new GraphNode<int>(1);
-	auto* node2 = new GraphNode<int>(2);
-	auto* node3 = new GraphNode<int>(3);
-	auto* node4 = new GraphNode<int>(4);
-	auto* node5 = new GraphNode<int>(5);
+	auto node1 = std::make_shared<GraphNode<int>>(1);
+	auto node2 = std::make_shared<GraphNode<int>>(2);
+	auto node3 = std::make_shared<GraphNode<int>>(3);
+	auto node4 = std::make_shared<GraphNode<int>>(4);
+	auto node5 = std::make_shared<GraphNode<int>>(5);
 
 	Graph<int> graph;
 	graph.addNode(node1);
@@ -31,11 +32,11 @@ TEST(GraphTraversalTest, BreadthFirstSearch) {
 }
 
 TEST(GraphTraversalTest, DepthFirstSearch) {
-	auto* node1 = new GraphNode<int>(1);
-	auto* node2 = new GraphNode<int>(2);
-	auto* node3 = new GraphNode<int>(3);
-	auto* node4 = new GraphNode<int>(4);
-	auto* node5 = new GraphNode<int>(5);
+	auto node1 = std::make_shared<GraphNode<int>>(1);
+	auto node2 = std::make_shared<GraphNode<int>>(2);
+	auto node3 = std::make_shared<GraphNode<int>>(3);
+	auto node4 = std::make_shared<GraphNode<int>>(4);
+	auto node5 = std::make_shared<GraphNode<int>>(5);
 
 	Graph<int> graph;
 	graph.addNode(node1);
@@ -59,11 +60,11 @@ TEST(GraphTraversalTest, DepthFirstSearch) {
 }
 
 TEST(GraphTraversalTest, Dijkstra) {
-	auto* node1 = new GraphNode<int>(1);
-	auto* node2 = new GraphNode<int>(2);
-	auto* node3 = new GraphNode<int>(3);
-	auto* node4 = new GraphNode<int>(4);
-	auto* node5 = new GraphNode<int>(5);
+	auto node1 = std::make_shared<GraphNode<int>>(1);
+	auto node2 = std::make_shared<GraphNode<int>>(2);
+	auto node3 = std::make_shared<GraphNode<int>>(3);
+	auto node4 = std::make_shared<GraphNode<int>>(4);
+	auto node5 = std::make_shared<GraphNode<int>>(5);
 
 	Graph<int> graph;
 	graph.addNode(node1);
@@ -78,8 +79,8 @@ TEST(GraphTraversalTest, Dijkstra) {
 	graph.addEdge(node2, node5, 5);
 	graph.addEdge(node4, node5, 1);
 
-	std::map<GraphNode<int>*, int> result = dijkstra(graph, node1);
-	std::map<GraphNode<int>*, int> expected = {
+	std::map<std::shared_ptr<GraphNode<int>>, int> result = dijkstra(graph, node1);
+	std::map<std::shared_ptr<GraphNode<int>>, int> expected = {
 		{node1, 0},
 		{node2, 1},
 		{node3, 4},
@@ -90,15 +91,15 @@ TEST(GraphTraversalTest, Dijkstra) {
 	ASSERT_EQ(result.size(), expected.size());
 	for(const auto& [node, distance] : expected) {
 		EXPECT_EQ(result[node], distance);
-	}	
+	}
 }
 
 TEST(GraphTraversalTest, BellmanFord) {
-    auto* node1 = new GraphNode<int>(1);
-    auto* node2 = new GraphNode<int>(2);
-    auto* node3 = new GraphNode<int>(3);
-    auto* node4 = new GraphNode<int>(4);
-    auto* node5 = new GraphNode<int>(5);
+    auto node1 = std::make_shared<GraphNode<int>>(1);
+    auto node2 = std::make_shared<GraphNode<int>>(2);
+    auto node3 = std::make_shared<GraphNode<int>>(3);
+    auto node4 = std::make_shared<GraphNode<int>>(4);
+    auto node5 = std::make_shared<GraphNode<int>>(5);
 
     Graph<int> graph;
     graph.addNode(node1);
@@ -113,8 +114,8 @@ TEST(GraphTraversalTest, BellmanFord) {
     graph.addEdge(node2, node5, 5);
     graph.addEdge(node4, node5, 1);
 
-    std::map<GraphNode<int>*, int> result = bellmanFord(graph, node1);
-    std::map<GraphNode<int>*, int> expected = {
+    std::map<std::shared_ptr<GraphNode<int>>, int> result = bellmanFord(graph, node1);
+    std::map<std::shared_ptr<GraphNode<int>>, int> expected = {
         {node1, 0},
         {node2, 1},
         {node3, 4},
@@ -129,11 +130,11 @@ TEST(GraphTraversalTest, BellmanFord) {
 }
 
 TEST(GraphTraversalTest, BellmanFordNegativeCycle) {
-	auto* node1 = new GraphNode<int>(1);
-	auto* node2 = new GraphNode<int>(2);
-	auto* node3 = new GraphNode<int>(3);
-	auto* node4 = new GraphNode<int>(4);
-	auto* node5 = new GraphNode<int>(5);
+	auto node1 = std::make_shared<GraphNode<int>>(1);
+	auto node2 = std::make_shared<GraphNode<int>>(2);
+	auto node3 = std::make_shared<GraphNode<int>>(3);
+	auto node4 = std::make_shared<GraphNode<int>>(4);
+	auto node5 = std::make_shared<GraphNode<int>>(5);
 
 	Graph<int> graph;
 	graph.addNode(node1);
