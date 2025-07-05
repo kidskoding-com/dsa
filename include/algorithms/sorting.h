@@ -2,7 +2,7 @@
 #define SORTING_H
 
 #include <vector>
-#include <data_structures/heap.h>
+#include "../data_structures/heap.h"
 
 void bubbleSort(std::vector<int>& array);
 void insertionSort(std::vector<int>& array);

@@ -3,7 +3,7 @@
 
 #include <deque>
 #include <vector>
-#include "data_structures/tree.h"
+#include "../data_structures/tree.h"
 
 template <typename T>
 std::vector<T> levelOrderTraversal(BinaryTree<T>* tree) {

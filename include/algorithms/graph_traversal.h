@@ -10,7 +10,7 @@
 #include <limits>
 #include <memory>
 #include <stdexcept>
-#include "data_structures/graph.h"
+#include "../data_structures/graph.h"
 
 template <typename T>
 std::vector<T> breadthFirstSearch(Graph<T>& graph, std::shared_ptr<GraphNode<T>> start) {

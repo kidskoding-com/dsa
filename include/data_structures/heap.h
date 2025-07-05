@@ -29,14 +29,14 @@ public:
 	
 	void buildHeap() {
 		int length = values.size();
-		for(int i = values.size() / 2 - 1; i >= 0; --i) {
+		for(int i = (values.size() / 2) - 1; i >= 0; --i) {
             siftDown(i, length);
         }
 	}
 
 	void siftDown(unsigned int index, unsigned int length) {
-		unsigned int leftChild = 2 * index + 1;
-		unsigned int rightChild = 2 * index + 2;
+		unsigned int leftChild = (2 * index) + 1;
+		unsigned int rightChild = (2 * index) + 2;
 		int largestOrSmallest = index;
 
 		if(leftChild < length) {
