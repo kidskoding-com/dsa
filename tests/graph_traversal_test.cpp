@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <memory>
-#include "data_structures/graph.h"
-#include "algorithms/graph_traversal.h"
+#include "data_structures/graph.hpp"
+#include "algorithms/graph_traversal.hpp"
 
 TEST(GraphTraversalTest, BreadthFirstSearch) {
 	auto node1 = std::make_shared<GraphNode<int>>(1);

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "data_structures/tree.h"
+#include "data_structures/tree.hpp"
 
 TEST(BinaryTreeTest, InsertSingleElement) {
     BinaryTree<int> tree;

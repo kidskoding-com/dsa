@@ -1,8 +1,8 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
 
 #include <stdexcept>
-#include "node.h"
+#include "node.hpp"
 
 template <typename T>
 class Queue {
@@ -64,4 +64,4 @@ public:
 	}
 };
 
-#endif //QUEUE_H
+#endif // QUEUE_HPP

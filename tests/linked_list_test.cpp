@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "data_structures/linked_list.h"
+#include "data_structures/linked_list.hpp"
 
 TEST(LinkedListTest, PushFront) {
     LinkedList<int> list;

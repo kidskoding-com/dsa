@@ -1,5 +1,5 @@
-#ifndef NODE_H
-#define NODE_H
+#ifndef NODE_HPP
+#define NODE_HPP
 
 template <typename T>
 class Node {
@@ -12,4 +12,4 @@ public:
 	~Node() = default;
 };
 
-#endif //NODE_H
+#endif // NODE_HPP

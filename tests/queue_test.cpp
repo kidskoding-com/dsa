@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "data_structures/queue.h"
+#include "data_structures/queue.hpp"
 
 TEST(QueueTest, Enqueue) {
     Queue<int> q;

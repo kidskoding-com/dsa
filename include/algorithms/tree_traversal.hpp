@@ -1,9 +1,9 @@
-#ifndef TREE_TRAVERSAL_H
-#define TREE_TRAVERSAL_H
+#ifndef TREE_TRAVERSAL_HPP
+#define TREE_TRAVERSAL_HPP
 
 #include <deque>
 #include <vector>
-#include "../data_structures/tree.h"
+#include "data_structures/tree.hpp"
 
 template <typename T>
 std::vector<T> levelOrderTraversal(BinaryTree<T>* tree) {
@@ -66,4 +66,4 @@ std::vector<T> postOrderTraversal(BinaryTree<T>* tree) {
 	return visited;
 }
 
-#endif //TREE_TRAVERSAL_H
+#endif // TREE_TRAVERSAL_HPP

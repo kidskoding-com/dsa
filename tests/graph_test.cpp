@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "data_structures/graph.h"
+#include "data_structures/graph.hpp"
 
 TEST(GraphTest, AddNode) {
     Graph<int> graph;

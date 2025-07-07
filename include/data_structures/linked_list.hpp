@@ -1,8 +1,8 @@
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#ifndef LINKED_LIST_HPP
+#define LINKED_LIST_HPP
 
 #include <stdexcept>
-#include "node.h"
+#include "node.hpp"
 
 template <typename T>
 class LinkedList {

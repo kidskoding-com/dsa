@@ -1,5 +1,5 @@
-#ifndef GRAPH_TRAVERSAL_H
-#define GRAPH_TRAVERSAL_H
+#ifndef GRAPH_TRAVERSAL_HPP
+#define GRAPH_TRAVERSAL_HPP
 
 #include <set>
 #include <stack>
@@ -10,7 +10,7 @@
 #include <limits>
 #include <memory>
 #include <stdexcept>
-#include "../data_structures/graph.h"
+#include "data_structures/graph.hpp"
 
 template <typename T>
 std::vector<T> breadthFirstSearch(Graph<T>& graph, std::shared_ptr<GraphNode<T>> start) {
@@ -138,4 +138,4 @@ std::map<std::shared_ptr<GraphNode<T>>, int> bellmanFord(Graph<T>& graph, std::s
     return distances;
 }
 
-#endif //GRAPH_TRAVERSAL_H
+#endif // GRAPH_TRAVERSAL_HPP

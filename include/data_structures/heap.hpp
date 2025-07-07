@@ -1,5 +1,5 @@
-#ifndef HEAP_H
-#define HEAP_H
+#ifndef HEAP_HPP
+#define HEAP_HPP
 
 #include <vector>
 
@@ -62,4 +62,4 @@ public:
 	}
 };
 
-#endif //HEAP_H
+#endif // HEAP_HPP

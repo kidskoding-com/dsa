@@ -1,5 +1,5 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef STACK_HPP
+#define STACK_HPP
 
 #include <stdexcept>
 
@@ -42,4 +42,4 @@ public:
 	}
 };
 
-#endif //STACK_H
+#endif // STACK_HPP

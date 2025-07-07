@@ -2,7 +2,7 @@
 #define SORTING_H
 
 #include <vector>
-#include "../data_structures/heap.h"
+#include "data_structures/heap.hpp"
 
 void bubbleSort(std::vector<int>& array);
 void insertionSort(std::vector<int>& array);
@@ -20,4 +20,4 @@ void radixSort(std::vector<int>& array);
 
 void heapSort(Heap<int>& heap);
 
-#endif //SORTING_H
+#endif // SORTING_H

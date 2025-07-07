@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include <data_structures/tree.h>
-#include <algorithms/tree_traversal.h>
+#include "data_structures/tree.hpp"
+#include "algorithms/tree_traversal.hpp"
 
 TEST(TreeTraversalTest, LevelOrderTraversal) {
     BinaryTree<int> tree;

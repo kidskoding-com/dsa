@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "data_structures/stack.h"
+#include "data_structures/stack.hpp"
 
 class StackTest : public testing::Test {
 protected:

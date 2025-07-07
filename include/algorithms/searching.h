@@ -4,4 +4,4 @@
 int linearSearch(int array[], int target);
 int binarySearch(int array[], int target);
 
-#endif //SEARCHING_H
+#endif // SEARCHING_H

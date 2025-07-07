@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "data_structures/heap.h"
+#include "data_structures/heap.hpp"
 #include "algorithms/sorting.h"
 
 TEST(HeapTest, InsertMaxHeap) {
