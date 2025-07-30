@@ -1,3 +1,6 @@
+#ifndef MST_HPP
+#define MST_HPP
+
 #include "./data_structures/graph.hpp"
 #include "./data_structures/disjoint_set.hpp"
 #include <vector>
@@ -13,7 +16,7 @@ std::vector<std::tuple<std::shared_ptr<GraphNode<T>>, std::shared_ptr<GraphNode<
         set.makeSet(pair.first);
         for(const auto& [neighbor, weight] : pair.second) {
             if(pair.first < neighbor) {
-                edges.push_back()(pair.first, neighbor, weight);
+                edges.emplace_back(pair.first, neighbor, weight);
             }
         }
     }
@@ -26,9 +29,11 @@ std::vector<std::tuple<std::shared_ptr<GraphNode<T>>, std::shared_ptr<GraphNode<
     std::vector<std::tuple<std::shared_ptr<GraphNode<T>>, std::shared_ptr<GraphNode<T>>, int>> mst;
     for(const auto& [u, v, w] : edges) {
         if(set.unionSet(u, v)) {
-            mst.push_back(u, v, w);
+            mst.emplace_back(u, v, w);
         }
     }
 
     return mst;
 }
+
+#endif // MST_HPP
